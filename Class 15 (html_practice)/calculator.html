@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>    
+</head>
+<body>
+    <h1>My Calculator</h1>
+
+    <p>input 1: <input id="input1" /></p>
+    
+    <p>input 2: <input id="input2"/></p>   
+    
+    <button id="add" onclick="add()">+</button>
+    <button id="subtract" onclick="subtract()">-</button>
+    
+    
+    
+    <p>Sum:<input id="output1" /></p>
+    <script>
+    function add() {
+        var in1 = Number(document.getElementById("input1").value);
+        var in2 = Number(document.getElementById("input2").value);
+        var res;
+    
+        res = in1 + in2;
+        console.log(res);
+        document.getElementById("output1").value = res;
+    }
+
+    function subtract() {
+        var in1 = Number(document.getElementById("input1").value);
+        var in2 = Number(document.getElementById("input2").value);
+        var res;
+    
+        res = in1 - in2;
+        console.log(res);
+        document.getElementById("output1").value = res;
+    }
+    </script>
+</body>
+</html>

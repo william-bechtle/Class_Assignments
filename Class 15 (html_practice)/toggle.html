@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1 id="result">Wlecome Guest</h1>
+    <input type="checkbox"  id="" onchange="onClick()" >
+    <script>
+        var a = 1;
+        function getA() {
+          a = -a;
+          return a;
+        }
+        function onClick(){
+            a = getA();
+            if (a == 1){
+            document.getElementById('result').innerHTML = 'Welcome Mark'
+            }
+            if (a == -1){
+              document.getElementById('result').innerHTML = 'Welcome WHOMEVER'
+            }
+        }
+    </script>
+
+</body>
+</html>

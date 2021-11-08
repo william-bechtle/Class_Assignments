@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>    
+</head>
+<body>
+    <h1>REGISTER FOR AN ACCOUNT</h1>
+
+    <p>Enter Username: <input type="text" id="username" /></p>
+    
+    <p>Enter Password: <input type="text" id="password"/></p>
+    
+    <p>Enter Password Again: <input type="text" id="password2"/></p>  
+    
+    <button id="register" onclick="add()">REGISTER</button>
+    
+    <script>
+    function add() {
+        a = document.getElementById("username").value;
+        b = document.getElementById("password").value;
+        c = document.getElementById("password2").value;
+        if (b != c && a.length < 5 && (b.length < 5 || c.length < 5)){
+            alert("USERNAME TOO SHORT... PASSWORDS DONT MATCH AND THEY'RE TOO SHORT!");
+            document.getElementById("username").value = '';
+            document.getElementById("password").value = '';
+            document.getElementById("password2").value = '';
+        }
+        else if (a.length < 5 && (b.length < 5 || c.length < 5)){
+            alert("USERNAME TOO SHORT... PASSWORDS TOO SHORT!");
+            document.getElementById("username").value = '';
+            document.getElementById("password").value = '';
+            document.getElementById("password2").value = '';
+        }
+        else if (b != c && a.length < 5){
+            alert("USERNAME TOO SHORT... PASSWORDS DONT MATCH");
+            document.getElementById("username").value = '';
+            document.getElementById("password").value = '';
+            document.getElementById("password2").value = '';
+        }
+        else if (b != c && (b.length < 5 || c.length < 5)){
+            alert("PASSWORDS DONT MATCH AND THEY'RE TOO SHORT!");
+            document.getElementById("password").value = '';
+            document.getElementById("password2").value = '';
+        }
+        else if (b != c){
+            alert("PASSWORDS DONT MATCH!");
+            document.getElementById("password").value = '';
+            document.getElementById("password2").value = '';
+        }
+        else if (b.length < 5 || c.length < 5){
+            alert("PASSWORD TOO SHORT");
+            document.getElementById("password").value = '';
+            document.getElementById("password2").value = '';
+        }
+        else{
+            alert("User " + a + " registered!");
+            document.getElementById("username").value = '';
+            document.getElementById("password").value = '';
+            document.getElementById("password2").value = '';
+        }
+    }
+
+    </script>
+</body>
+</html>
