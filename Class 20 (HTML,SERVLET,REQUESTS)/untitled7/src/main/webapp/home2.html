@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+<div class="wrapper">
+    <h1 id="user"></h1>
+    <form method="get" action = "sixth"></form>
+    <div>
+        <input type="hidden" class="hidden" name="user" id="username">
+    </div>
+    <div>
+        <label for="pass">Password</label><br>
+        <input type="password" name="pass" id="pass">
+    </div>
+    <input id = "butt" class="btn" type="submit" value="Login">
+    </form>
+
+
+</div>
+
+</body>
+
+<script>
+    let x = document.cookie;
+    x = x.split(';');
+    x = x[0].split('=');
+    x = x[1];
+    document.getElementById("user").innerHTML = `Hello User ${x} !`;
+    document.getElementById("username").innerHTML = x;
+</script>
+</html>
