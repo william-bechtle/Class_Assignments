@@ -15,17 +15,29 @@ public class FifthServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         response.setContentType("text/html; charset=UTF-8");
         PrintWriter out = response.getWriter();
-
+        String url = "0";
         String name = request.getParameter("user");
         String pass = request.getParameter("pass");
-        Cookie[] cookies = request.getCookies();
+        url = request.getParameter("url");
+        System.out.println("name: " + name);
+        System.out.println("GET");
+        System.out.println("url: " + url);
 
-        if (!Objects.equals(name, "admin@admin.com") && !Objects.equals(pass, "pass")) {
+
+        Cookie[] cookies = request.getCookies();
+        if (Objects.equals(url, "1")) {
+            System.out.println("hey");
+            eraseit eraseit = new eraseit();
+            eraseit.eraseCookie(request,response);
+            request.getRequestDispatcher("/block.html").include(request, response);
+        }
+
+        else if (!Objects.equals(name, "admin@admin.com") && !Objects.equals(name, "wjb@gmail.com")) {
             String a =
                     """
                     <script> 
                         alert("ERROR.. NO EXISTING USER");
-                        location.href = "http://localhost:8080/home";
+                        location.href = "http://localhost:8081/home";
                     </script>""";
             out.println(a);
         }
@@ -35,9 +47,21 @@ public class FifthServlet extends HttpServlet {
         else {
             Cookie cookie = new Cookie("email", name);
             response.addCookie(cookie);
-            Cookie cookie2 = new Cookie("pass", pass);
-            response.addCookie(cookie2);
             request.getRequestDispatcher("/home2.html").include(request, response);
         }
+    }
+
+
+};
+class eraseit {
+    public void eraseCookie(HttpServletRequest req, HttpServletResponse resp) {
+        Cookie[] cookies = req.getCookies();
+        if (cookies != null)
+            for (Cookie cookie : cookies) {
+                cookie.setValue("");
+                cookie.setPath("/");
+                cookie.setMaxAge(0);
+                resp.addCookie(cookie);
+            }
     }
 }

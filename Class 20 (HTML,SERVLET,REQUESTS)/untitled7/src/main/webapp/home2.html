@@ -11,15 +11,14 @@
 
 <div class="wrapper">
     <h1 id="user"></h1>
-    <form method="get" action = "sixth"></form>
+    <form method="get" action = "sixth">
     <div>
         <input type="hidden" class="hidden" name="user" id="username">
     </div>
     <div>
-        <label for="pass">Password</label><br>
-        <input type="password" name="pass" id="pass">
+        <input id = "butt" class="btn" type="submit" value="Calculator">
     </div>
-    <input id = "butt" class="btn" type="submit" value="Login">
+
     </form>
 
 
@@ -33,6 +32,6 @@
     x = x[0].split('=');
     x = x[1];
     document.getElementById("user").innerHTML = `Hello User ${x} !`;
-    document.getElementById("username").innerHTML = x;
+    document.getElementById("username").value = x;
 </script>
 </html>
