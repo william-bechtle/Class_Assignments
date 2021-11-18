@@ -1,0 +1,79 @@
+
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         version="2.5"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <display-name>Archetype Created Web Application</display-name>
+
+  <servlet>
+    <servlet-name>first</servlet-name>
+    <servlet-class>FirstServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>first</servlet-name>
+    <url-pattern>/intro</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>second</servlet-name>
+    <servlet-class>SecondServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>second</servlet-name>
+    <url-pattern>/home</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>third</servlet-name>
+    <servlet-class>ThirdServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>third</servlet-name>
+    <url-pattern>/third</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>fourth</servlet-name>
+    <servlet-class>FourthServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>fourth</servlet-name>
+    <url-pattern>/fourth</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>fifth</servlet-name>
+    <servlet-class>FifthServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>fifth</servlet-name>
+    <url-pattern>/fifth</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>sixth</servlet-name>
+    <servlet-class>SixthServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>sixth</servlet-name>
+    <url-pattern>/sixth</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>seventh</servlet-name>
+    <servlet-class>SeventhServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>seventh</servlet-name>
+    <url-pattern>/seventh</url-pattern>
+  </servlet-mapping>
+
+
+</web-app>

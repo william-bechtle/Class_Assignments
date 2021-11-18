@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="login1.css">
+</head>
+<body>
+
+<div class="wrapper">
+    <h1 id="user"></h1>
+    <form method="get" action = "sixth">
+    <div>
+        <input type="hidden" class="hidden" name="user" id="username">
+    </div>
+    <div class="padd">
+        <input id = "butt" class="btn" type="submit" value="Calculator">
+    </div>
+
+    </form>
+    <form method="get" action = "seventh">
+        <div>
+            <input type="hidden" class="hidden" name="user" id="usernam">
+        </div>
+        <div class="padd">
+            <input id = "butto" class="btn" type="submit" value="List of Users">
+        </div>
+
+    </form>
+
+
+</div>
+
+</body>
+
+<script>
+    let x = document.cookie;
+    x = x.split(';');
+    x = x[0].split('=');
+    x = x[1];
+    document.getElementById("user").innerHTML = `Hello User ${x} !`;
+    document.getElementById("username").value = x;
+    document.getElementById("usernam").value = x;
+</script>
+</html>
