@@ -19,6 +19,12 @@
         a = a + 1;
         document.getElementById("Count").innerHTML = a;
     }
+    let x = document.cookie;
+    x = x.split(';');
+    x = x[0].split('=');
+    x = x[1];
+    let a = 'hello user ${}'
+    document.getElementById("user").innerHTML = "Hello User ${x} !";
     </script>
 </body>
 </html>

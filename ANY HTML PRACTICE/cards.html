@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    <style>
+        .wrapper{
+            background-color: rgb(109, 96, 96);
+            width: 130px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 5px 10px rgb(9, 75, 138);
+        }
+        .text{
+            color: rgb(35, 149, 202);
+        }
+    </style>
+  </head>
+  <body class="bg-secondary">
+
+    <h1 class="wrapper">
+        <p class="text">POSTS</p>
+    </h1>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    
+
+
+    <script>
+        var a = 1;
+        function geta(){
+            a = -a;
+        }
+        function getData(){
+            a = geta;
+            // create XMLHttpRequest object
+            var request = new XMLHttpRequest();
+
+            // instantiate the request object
+            // open(method_type, url, async)
+            request.open('GET', 'https://jsonplaceholder.typicode.com/posts', true)
+
+            // defining event listener for readyStateChnage event
+            request.onreadystatechange = function(){
+                // check if the request is completed and was successfull
+                if(this.readyState == 4 && this.status == 200){
+                    // inserting the response from the server into the html element
+                    var result = JSON.parse(this.responseText);
+
+                    for(var obj of result){
+                        
+                    }
+                }
+            }
+
+            // sending the request to the server
+            request.send()
+        }
+    let x = document.cookie;
+    x = x.split(';');
+    x = x[0].split('=');
+    x = x[1];
+    document.getElementById("user").innerHTML = `Hello User ${x} !`;
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+
+   
+  </body>
+  </html>
